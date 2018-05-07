@@ -1,7 +1,6 @@
 #include <Task.h>
 #include<SoftwareSerial.h>
 TaskManager taskManager;
-
 SoftwareSerial toHq(6,7);
 
 #include "./modules/Sensors/water.h"

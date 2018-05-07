@@ -6,7 +6,7 @@ class Debugger : public Task
     static Debugger *s_instance;
     Debugger() : Task(MsToTaskTime(1)){
         Serial.begin(115200);
-        Serial1.begin(115200);
+        Serial.begin(115200);
     };
     static Debugger *instance()
     {
@@ -27,8 +27,8 @@ class Debugger : public Task
     }
     virtual void OnUpdate(uint32_t delta_time)
     {
-        while (Serial1.available()) {     // If anything comes in Serial1 (pins 0 & 1)
-            Serial.write(Serial1.read());   // read it and send it out Serial (USB)
+        while (Serial.available()) {     // If anything comes in Serial1 (pins 0 & 1)
+            Serial.write(Serial.read());   // read it and send it out Serial (USB)
         }
     }
 };
