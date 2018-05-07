@@ -5,7 +5,7 @@ class Sensors : public Task
 {
   public:
     static Sensors *s_instance;
-    Sensors() : Task(MsToTaskTime(1000)){};
+    Sensors() : Task(MsToTaskTime(500)){};
     static Sensors *instance()
     {
       if (!s_instance)
@@ -24,7 +24,8 @@ class Sensors : public Task
       float ecraw = ECSensor::instance()->GetEC();
       float phraw = pHSensor::instance()->GetPH();
       float water = WaterSensor::instance()->GetWater();
-      packet = "{" + String(ecraw) + "," + String(phraw) + "," + String(water) + "}";
+      int floating = Floating::instance()->GetFloating();
+      packet = "{" + String(ecraw) + "," + String(phraw) + "," + String(water) +  "," + String(floating) +"}";
       Serial.println(packet);
       toHq.println(packet);
     }
