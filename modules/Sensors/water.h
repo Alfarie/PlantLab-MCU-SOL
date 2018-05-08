@@ -5,7 +5,7 @@
 #define ReadTemperature 1
 extern TaskManager taskManager;
 
-OneWire ds(49);
+OneWire ds(A2);
 DallasTemperature wtSensor(&ds);
 class WaterSensor : public Task
 {

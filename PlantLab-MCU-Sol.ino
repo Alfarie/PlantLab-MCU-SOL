@@ -1,7 +1,7 @@
 #include <Task.h>
 #include<SoftwareSerial.h>
 TaskManager taskManager;
-SoftwareSerial toHq(6,7);
+SoftwareSerial toHq(10,9);
 
 #include "./modules/Sensors/floating.h"
 #include "./modules/Sensors/water.h"

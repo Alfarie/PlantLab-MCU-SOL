@@ -1,6 +1,6 @@
 #include <Task.h>
 extern TaskManager taskManager;
-#define FLOATING A3
+#define FLOATING 13
 class Floating : public Task
 {
   public:
@@ -29,6 +29,8 @@ class Floating : public Task
     virtual void OnUpdate(uint32_t delta_time)
     {
         val = digitalRead(FLOATING);
+		if (val == HIGH){val = LOW;}
+		else {val = HIGH;}
     }
 };
 Floating *Floating::s_instance = 0;
