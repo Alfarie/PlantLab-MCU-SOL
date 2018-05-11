@@ -5,7 +5,7 @@ class Sensors : public Task
 {
   public:
     static Sensors *s_instance;
-    Sensors() : Task(MsToTaskTime(500)){};
+    Sensors() : Task(MsToTaskTime(200)){};
     static Sensors *instance()
     {
       if (!s_instance)
