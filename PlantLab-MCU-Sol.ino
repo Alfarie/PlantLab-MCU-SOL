@@ -9,7 +9,7 @@ SoftwareSerial toHq(10,9);
 #include "./modules/Sensors/ph.h"
 #include "./modules/Sensors/Sensors.h"
 
-#include "./modules/debuger.h"
+// #include "./modules/debuger.h"
 // #include "./modules/Helper/Puppet.h"
 
 
